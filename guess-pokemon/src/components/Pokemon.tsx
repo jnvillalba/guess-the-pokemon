@@ -153,6 +153,7 @@ export default function Pokemon() {
       alert("You won!");
     } else {
       alert("Wrong!");
+      pokemon.value == "";
     }
   }
   return (
@@ -170,15 +171,16 @@ export default function Pokemon() {
         className="img-left"
       />
       <div className="left">
-      {hasWon ? (
-        <button onClick={() => location.reload()}> Play Again</button>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <input autoFocus type="text" name="pokemon"></input>
-          <button type="submit">Submit</button>
-        </form>
-      )}
-    </div></div>
+        {hasWon ? (
+          <button onClick={() => location.reload()}> Play Again</button>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <input autoFocus type="text" name="pokemon"></input>
+            <button type="submit">Submit</button>
+          </form>
+        )}
+      </div>
+    </div>
   );
 }
 // crear lista de nombres de Pokemon

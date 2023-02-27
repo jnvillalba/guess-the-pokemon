@@ -2,3 +2,5 @@ Estilo
 list de pokemon como api
 autocompletar nombre
 cambiar estilo
+ness css
+wordle
