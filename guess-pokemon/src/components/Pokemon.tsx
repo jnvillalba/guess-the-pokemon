@@ -180,12 +180,30 @@ export default function Pokemon() {
           <button onClick={() => location.reload()}> Play Again</button>
         ) : (
           <form onSubmit={handleSubmit}>
-            <input autoFocus type="text" name="pokemon"></input>
+            <input
+              autoFocus
+              type="text"
+              name="pokemon"
+              list="suggestions"
+            ></input>
+            <datalist id="suggestions">
+              {Pokelist.map((p, i) => (
+                <option key={i} value={p} />
+              ))}
+            </datalist>
             <button type="submit">Submit</button>
           </form>
         )}
       </div>
-      {/*<p className="text__background">Blaziken</p>*/}
+      {/*<p className="text__background">Blaziken</p>
+      <input id="color" list="suggestions">
+<datalist id="suggestions">
+    <option value="Black">
+    <option value="Red">
+    <option value="Green">
+    <option value="Blue">
+    <option value="White">
+</datalist>*/}
     </div>
   );
 }
