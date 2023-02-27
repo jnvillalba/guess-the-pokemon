@@ -32,6 +32,7 @@ const Pokelist = [
   "nidoran",
   "nidorina",
   "nidoqueen",
+  "nidoran",
   "nidorino",
   "nidoking",
   "clefairy",
@@ -155,7 +156,7 @@ export default function Pokemon() {
     }
   }
   return (
-    <div>
+    <div className="container">
       <img
         height={412}
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
@@ -163,19 +164,21 @@ export default function Pokemon() {
         }.png`}
         style={{
           imageRendering: "pixelated",
-          filter: hasWon ? "" : "brightness(0) invert(1)",
+          filter: hasWon ? "" : " grayscale(100) brightness(50) invert(1)  ",
         }}
         width={412}
+        className="img-left"
       />
+      <div className="left">
       {hasWon ? (
         <button onClick={() => location.reload()}> Play Again</button>
       ) : (
         <form onSubmit={handleSubmit}>
           <input autoFocus type="text" name="pokemon"></input>
-          <button type="submit"></button>
+          <button type="submit">Submit</button>
         </form>
       )}
-    </div>
+    </div></div>
   );
 }
 // crear lista de nombres de Pokemon

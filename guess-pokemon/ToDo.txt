@@ -1,2 +1,4 @@
 Estilo
 list de pokemon como api
+autocompletar nombre
+cambiar estilo

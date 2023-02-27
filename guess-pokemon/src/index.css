@@ -20,12 +20,21 @@
   box-sizing: border-box;
 }
 
+html {
+  background: url(assets/gp.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100vh;
+}
+
 body {
   margin: auto;
   display: flex;
   place-items: center;
   min-width: 800px;
   min-height: 100vh;
+  
 }
 
 main {
@@ -37,23 +46,39 @@ a {
   color: aliceblue;
 }
 
-button {
+button, input {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0.5em 0.5em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-left: 10px;
 }
 
 button:hover {
-  border-color: #646cff;
+  border-color: #ffffff;
 }
 
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+.img-left{
+ position: absolute;
+ left: 0;
+ top: 0;
+ margin-left: 200px;
+ margin-top: 200px;
+}
+.left{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-left: 240px;
+  margin-bottom: 200px;
+ }
