@@ -160,7 +160,7 @@ export default function Pokemon() {
     <div>
       <div className="container-fluid">
         
-          <p className="text--sub">
+          <p className="text--sub mt-4">
             {hasWon ? Pokelist[MATCH] : "Who's that pokemon?"}
           </p>
 
