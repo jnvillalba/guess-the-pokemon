@@ -159,36 +159,34 @@ export default function Pokemon() {
   return (
     <div>
       <div className="container-fluid">
-        
-          <p className="text--sub mt-4">
-            {hasWon ? Pokelist[MATCH] : "Who's that pokemon?"}
-          </p>
+        <p className="text--sub mt-4">
+          {hasWon ? Pokelist[MATCH] : "Who's that pokemon?"}
+        </p>
 
-          <img
-            height={412}
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-              MATCH + 1
-            }.png`}
-            style={{
-              imageRendering: "pixelated",
-              filter: hasWon ? "" : " brightness(0) invert(1)",
-            }}
-            width={412}
-            className="poke-img"
-          />
+        <img
+          height={412}
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+            MATCH + 1
+          }.png`}
+          style={{
+            imageRendering: "pixelated",
+            filter: hasWon ? "" : " brightness(0) invert(1)",
+          }}
+          width={412}
+          className={hasWon ? "" : " poke-img"}
+        />
 
-          {hasWon ? (
-            <button onClick={() => location.reload()}> Play Again</button>
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <input autoFocus type="text" name="pokemon"></input>
-              <button type="submit">Submit</button>
-            </form>
-          )}
-        </div>
-        {/*<p className="text__background">Blaziken</p>*/}
+        {hasWon ? (
+          <button onClick={() => location.reload()}> Play Again</button>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <input autoFocus type="text" name="pokemon"></input>
+            <button type="submit">Submit</button>
+          </form>
+        )}
       </div>
-    
+      {/*<p className="text__background">Blaziken</p>*/}
+    </div>
   );
 }
 // crear lista de nombres de Pokemon

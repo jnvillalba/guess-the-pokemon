@@ -4,7 +4,7 @@ autocompletar nombre
 cambiar estilo
 ness css
 wordle
-agregar animaciones sonidos 
+agregar animaciones y sonidos 
 cambiar alerts (toasts)
 puntaje
 lista de ganadores
