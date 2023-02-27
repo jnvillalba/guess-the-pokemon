@@ -158,40 +158,37 @@ export default function Pokemon() {
   }
   return (
     <div>
-      <div className="flex__container flex--color flex--active">
-        <div className="flex__item flex__item--left">
-          <div className="flex__content">
-            <p className="text--sub">
-              {hasWon ? Pokelist[MATCH] : "Who's that pokemon?"}
-            </p>
+      <div className="container-fluid">
+        
+          <p className="text--sub">
+            {hasWon ? Pokelist[MATCH] : "Who's that pokemon?"}
+          </p>
 
-            <img
-              height={512}
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-                MATCH + 1
-              }.png`}
-              style={{
-                imageRendering: "pixelated",
-                filter: hasWon ? "" : " brightness(0) invert(1)",
-              }}
-              width={512}
-              className="poke-img"
-            />
+          <img
+            height={412}
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+              MATCH + 1
+            }.png`}
+            style={{
+              imageRendering: "pixelated",
+              filter: hasWon ? "" : " brightness(0) invert(1)",
+            }}
+            width={412}
+            className="poke-img"
+          />
 
-            {hasWon ? (
-              <button onClick={() => location.reload()}> Play Again</button>
-            ) : (
-              <form onSubmit={handleSubmit}>
-                <input autoFocus type="text" name="pokemon"></input>
-                <button type="submit">Submit</button>
-              </form>
-            )}
-          </div>
-          {/*<p className="text__background">Blaziken</p>*/}
+          {hasWon ? (
+            <button onClick={() => location.reload()}> Play Again</button>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              <input autoFocus type="text" name="pokemon"></input>
+              <button type="submit">Submit</button>
+            </form>
+          )}
         </div>
-        <div className="flex__item flex__item--right" id="right" />
+        {/*<p className="text__background">Blaziken</p>*/}
       </div>
-    </div>
+    
   );
 }
 // crear lista de nombres de Pokemon
