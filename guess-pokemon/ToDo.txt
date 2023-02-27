@@ -4,3 +4,8 @@ autocompletar nombre
 cambiar estilo
 ness css
 wordle
+agregar animaciones sonidos 
+cambiar alerts (toasts)
+lista de ganadores
+
+Tecnologias usadas: Vite React TypeScript 

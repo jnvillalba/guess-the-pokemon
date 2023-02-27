@@ -157,28 +157,39 @@ export default function Pokemon() {
     }
   }
   return (
-    <div className="container">
-      <img
-        height={412}
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-          MATCH + 1
-        }.png`}
-        style={{
-          imageRendering: "pixelated",
-          filter: hasWon ? "" : " grayscale(100) brightness(50) invert(1)  ",
-        }}
-        width={412}
-        className="img-left"
-      />
-      <div className="left">
-        {hasWon ? (
-          <button onClick={() => location.reload()}> Play Again</button>
-        ) : (
-          <form onSubmit={handleSubmit}>
-            <input autoFocus type="text" name="pokemon"></input>
-            <button type="submit">Submit</button>
-          </form>
-        )}
+    <div>
+      <div className="flex__container flex--color flex--active">
+        <div className="flex__item flex__item--left">
+          <div className="flex__content">
+          <p className="text--sub">{hasWon ? Pokelist[MATCH] : "Who's that pokemon"}</p>
+            <img
+              height={412}
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+                MATCH + 1
+              }.png`}
+              style={{
+                imageRendering: "pixelated",
+                filter: hasWon ? "" : " brightness(0) invert(1)",
+              }}
+              width={412}
+              className=""
+            />
+
+            {hasWon ? (
+                
+              <button onClick={() => location.reload()}> Play Again</button>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                
+                <input autoFocus type="text" name="pokemon"></input>
+                <button type="submit">Submit</button>
+              </form>
+            )}
+          </div>
+          {/*<p className="text__background">Blaziken</p>*/}
+        </div>
+        <div className="flex__item flex__item--right" />
+        
       </div>
     </div>
   );
