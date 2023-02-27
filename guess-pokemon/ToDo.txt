@@ -1,0 +1,2 @@
+Estilo
+list de pokemon como api

@@ -150,6 +150,8 @@ export default function Pokemon() {
     if (pokemon.value.toLowerCase() === Pokelist[MATCH]) {
       toggleWon(true);
       alert("You won!");
+    } else {
+      alert("Wrong!");
     }
   }
   return (
@@ -166,10 +168,10 @@ export default function Pokemon() {
         width={412}
       />
       {hasWon ? (
-        <button onClick={location.reload}> Play Again</button>
+        <button onClick={() => location.reload()}> Play Again</button>
       ) : (
         <form onSubmit={handleSubmit}>
-          <input type="text" name="pokemon"></input>
+          <input autoFocus type="text" name="pokemon"></input>
           <button type="submit"></button>
         </form>
       )}
