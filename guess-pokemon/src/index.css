@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -28,6 +29,7 @@ body {
 
 }
 
+
 main {
   padding: 1rem;
 }
@@ -40,7 +42,7 @@ a {
 button,
 input {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid #30619e;
   padding: 0.5em 0.5em;
   font-size: 1em;
   font-weight: 500;
@@ -50,6 +52,7 @@ input {
   transition: border-color 0.25s;
   margin-left: 10px;
   color: #fff;
+
 }
 
 button:hover {
@@ -98,10 +101,12 @@ body {
 
 .text--sub {
   font-family: 'Pokemon Solid', sans-serif;
-  
-  letter-spacing: 0.5rem;
+  color: #ecb710;
+  letter-spacing: 1rem;
   text-transform: uppercase;
-  
+  font-size: 50px;
+  text-shadow: 5px 0 #30619e, -5px 0 #30619e, 0 5px #30619e, 0 -5px #30619e,
+    5px 5px #30619e, -5px -5px #30619e, 5px -5px #30619e, -5px 5px #30619e;
 }
 
 .text--big {
@@ -176,8 +181,10 @@ body {
 }
 
 .flex__content {
-
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: transform 0.5s linear 0.5s, opacity 0.5s linear 0.5s;
@@ -223,4 +230,42 @@ body {
 .flex__container.animate--end .pokemon__img {
   transform: translate3d(200px, 0, 0);
   opacity: 0;
+}
+
+
+
+.poke-img {
+
+  animation: shake 1s cubic-bezier(.36, .10, .25, .93) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+
+  20%,
+  90% {
+    transform: translate3d(0px, 0, 1px);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(-1px, 2px, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, -1px, 0);
+  }
+}
+
+@media (max-width:720px) {
+  #right {
+    display: none;
+  }
 }

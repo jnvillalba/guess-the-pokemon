@@ -161,9 +161,12 @@ export default function Pokemon() {
       <div className="flex__container flex--color flex--active">
         <div className="flex__item flex__item--left">
           <div className="flex__content">
-          <p className="text--sub">{hasWon ? Pokelist[MATCH] : "Who's that pokemon"}</p>
+            <p className="text--sub">
+              {hasWon ? Pokelist[MATCH] : "Who's that pokemon?"}
+            </p>
+
             <img
-              height={412}
+              height={512}
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
                 MATCH + 1
               }.png`}
@@ -171,16 +174,14 @@ export default function Pokemon() {
                 imageRendering: "pixelated",
                 filter: hasWon ? "" : " brightness(0) invert(1)",
               }}
-              width={412}
-              className=""
+              width={512}
+              className="poke-img"
             />
 
             {hasWon ? (
-                
               <button onClick={() => location.reload()}> Play Again</button>
             ) : (
               <form onSubmit={handleSubmit}>
-                
                 <input autoFocus type="text" name="pokemon"></input>
                 <button type="submit">Submit</button>
               </form>
@@ -188,8 +189,7 @@ export default function Pokemon() {
           </div>
           {/*<p className="text__background">Blaziken</p>*/}
         </div>
-        <div className="flex__item flex__item--right" />
-        
+        <div className="flex__item flex__item--right" id="right" />
       </div>
     </div>
   );

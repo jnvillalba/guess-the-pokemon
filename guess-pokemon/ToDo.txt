@@ -6,6 +6,7 @@ ness css
 wordle
 agregar animaciones sonidos 
 cambiar alerts (toasts)
+puntaje
 lista de ganadores
 
 Tecnologias usadas: Vite React TypeScript 
