@@ -1,12 +1,15 @@
 Estilo
-list de pokemon como api
-autocompletar nombre
-cambiar estilo
+confetti ganador
+algo para wrong
+
 ness css
+
 wordle
-agregar animaciones y sonidos 
+
+agregar sonidos 
+
 cambiar alerts (toasts)
-puntaje
+
 lista de ganadores
 
 Tecnologias usadas: Vite React TypeScript 

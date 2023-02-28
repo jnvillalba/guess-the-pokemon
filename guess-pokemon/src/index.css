@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 body {
@@ -14,16 +13,14 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: auto;
 }
-
-
 
 .container-fluid {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 .text--sub {
@@ -41,14 +38,13 @@ body {
   font-size: 7.5em;
   font-weight: 700;
   line-height: 110px;
-  margin-left: -8px;
 }
 
 .text--normal {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.8);
+
+  color: #fff;
   line-height: 22px;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 button,
@@ -62,7 +58,7 @@ input {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-  margin-left: 10px;
+  margin-left: 5px;
   color: #fff;
 
 }
@@ -76,9 +72,13 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.poke-img{
+.poke-img {
   animation: shake 1s cubic-bezier(.36, .10, .25, .93) infinite;
   transform: translate3d(0, 0, 0);
+  margin-top: -50px;
+  margin-bottom: -25px;
+  pointer-events: none;
+  user-select: none;
 }
 
 @keyframes shake {
@@ -106,7 +106,7 @@ button:focus-visible {
 }
 
 @media (max-width:720px) {
-  
+
 
   .text--sub {
     color: #ecb710;
@@ -116,12 +116,15 @@ button:focus-visible {
       3px 3px #30619e, -3px -3px #30619e, 3px -3px #30619e, -3px 3px #30619e;
   }
 
-  form{
+  form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
+  }
+
+  button {
+    margin-top: 5px;
   }
 
 }

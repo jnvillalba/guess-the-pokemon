@@ -1,4 +1,5 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
+
 
 const Pokelist = [
   "bulbasaur",
@@ -133,7 +134,25 @@ const Pokelist = [
   "gyarados",
   "lapras",
   "ditto",
-  "eevee",
+  "Eevee",
+  "Vaporeon",
+  "Jolteon",
+  "Flareon",
+  "Porygon",
+  "Omanyte",
+  "Omastar",
+  "Kabuto",
+  "Kabutops",
+  "Aerodactyl",
+  "Snorlax",
+  "Articuno",
+  "Zapdos",
+  "Moltres",
+  "Dratini",
+  "Dragonair",
+  "Dragonite",
+  "Mewtwo",
+  "Mew",
 ];
 
 const MATCH = Math.floor(Math.random() * Pokelist.length);
@@ -144,16 +163,27 @@ type Form = HTMLFormElement & {
 
 export default function Pokemon() {
   const [hasWon, toggleWon] = useState(false);
+  const [score, setScore] = useState<number>(
+    Number(sessionStorage.getItem('score')) || 0
+  );
+
+  function aumentarPuntuacion(): void {
+    const nuevaPuntuacion = score + 1;
+    sessionStorage.setItem('score', String(nuevaPuntuacion));
+    setScore(nuevaPuntuacion);
+  }
+  
   function handleSubmit(event: FormEvent<Form>) {
     event.preventDefault();
     const { pokemon } = event.currentTarget;
 
     if (pokemon.value.toLowerCase() === Pokelist[MATCH]) {
       toggleWon(true);
+      aumentarPuntuacion()
       alert("You won!");
     } else {
-      alert("Wrong!");
-      pokemon.value == "";
+      alert("W");
+      pokemon.value = "";
     }
   }
   return (
@@ -162,7 +192,7 @@ export default function Pokemon() {
         <p className="text--sub mt-4">
           {hasWon ? Pokelist[MATCH] : "Who's that pokemon?"}
         </p>
-
+        <p className="text--normal">Score: {score}</p>
         <img
           height={412}
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
@@ -170,7 +200,10 @@ export default function Pokemon() {
           }.png`}
           style={{
             imageRendering: "pixelated",
-            filter: hasWon ? "" : " brightness(0) invert(1)",
+            filter: `brightness(${hasWon ? 1 : 0})`,
+            transition: "filter 0.5s",
+             
+            
           }}
           width={412}
           className={hasWon ? "" : " poke-img"}
@@ -195,16 +228,8 @@ export default function Pokemon() {
           </form>
         )}
       </div>
-      {/*<p className="text__background">Blaziken</p>
-      <input id="color" list="suggestions">
-<datalist id="suggestions">
-    <option value="Black">
-    <option value="Red">
-    <option value="Green">
-    <option value="Blue">
-    <option value="White">
-</datalist>*/}
     </div>
   );
 }
+
 // crear lista de nombres de Pokemon
