@@ -219,11 +219,11 @@ export default function Pokemon() {
               name="pokemon"
               list="suggestions"
             ></input>
-            <datalist id="suggestions">
+          { /* <datalist id="suggestions">
               {Pokelist.map((p, i) => (
                 <option key={i} value={p} />
               ))}
-            </datalist>
+            </datalist>*/}
             <button type="submit">Submit</button>
           </form>
         )}
